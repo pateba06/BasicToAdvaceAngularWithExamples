@@ -25,7 +25,7 @@ export class NgclassngstyleComponent implements OnInit {
   }
   ////[ngStyle] object Example
   mltStyle = {
-    'background-color': 'yelow',
+    'background-color': 'black',
     'border': 'solid 1px red'
   }
 }
