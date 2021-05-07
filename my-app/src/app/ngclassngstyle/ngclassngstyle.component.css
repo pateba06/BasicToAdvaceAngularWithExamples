@@ -1,0 +1,18 @@
+p{
+    margin-bottom:  0;
+    color:brown
+}
+b{
+    color:green
+}
+
+h1{
+    color:blueviolet;
+    border: 1px solid blue;
+    background-color: aquamarine;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+}

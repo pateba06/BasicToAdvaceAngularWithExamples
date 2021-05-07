@@ -1,0 +1,28 @@
+<h1>Interpolation</h1>
+<strong>
+    <ul>    
+        <li>Only Used for String</li>
+        <li>Can be used for string concenation</li>
+        <li>We can use javaScript property also</li>
+    </ul>
+</strong>    
+<p>My name is {{fname}}</p>
+<p>String concenation example <b>{{ "Welcome " + fname}} </b></p>
+<p>Java script property to see length in interpolation var.length <b>{{fname.length}}</b></p>
+<p>Java script property to convert to upper case/lower Case <b>{{fname.toUpperCase()}} {{fname.toLowerCase()}}</b></p>
+<p>Using method in interpolation <b>{{myMethod()}}</b></p>
+<button (click)="turneryOnline()">making appStatus true in ts file for "Online"</button>
+<p>Turnery Operators showing online/offline<b>My status in {{appStatus? "Online":"Offline"}}</b></p>
+<p>Turnery Operators showing online/offline other way by using property<b>My status in {{appStatus?
+        status1:status2}}</b></p>
+<hr>
+<h1> Property Binding vs Interpolation</h1>
+<strong>In Interpolation we can only use String, but in Property binding we can use boolean as well</strong>
+<p>Interpolation <input type="text" placeholder={{fname}}></p>
+<p>property Binding<input type="text" [placeholder]="fname"></p>
+<p>property Binding Other Way<input type="text" bind-placeholder="fname"></p>
+<strong> Scenario where we can not use Property Binding</strong>
+<p>disable attribute won't work with string or string interpolation - it does not read true or false<input type="text" disabled="false" value="fname"></p>
+<p>Property binding will work in this scenario true and false<input type="text" [disabled]="false" value="fname"></p>
+<p>hidden attribute won't work with interpolation<input type="text" hidden="false" value="fname"></p>
+<p>hidden attribute will work with Property binding<input type="text" [hidden]="false" value="fname"></p>
