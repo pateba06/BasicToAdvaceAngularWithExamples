@@ -8,17 +8,16 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { DatabindingComponent } from './databinding/databinding.component';
-import { NgclassngstyleComponent } from './ngclassngstyle/ngclassngstyle.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
    declarations: [
       AppComponent,
       DatabindingComponent,
-      NgclassngstyleComponent
    ],
    imports: [
 	 BrowserModule,
-	 BrowserModule,
+    FormsModule,
 	 BsDropdownModule.forRoot(),
 	 TooltipModule.forRoot(),
 	 ModalModule.forRoot()

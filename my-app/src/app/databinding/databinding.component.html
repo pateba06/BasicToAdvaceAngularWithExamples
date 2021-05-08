@@ -71,9 +71,57 @@
 
 <!-- 
     Let see an example on click of add to cart the text will change whether it is laptop/tv/washing machine
- -->
- <p><b>Example - $event.target example using (click) event</b></p>
- <button value="laptop" (click)="onAddCartEvent($event)">Laptop</button>
- <button value="TV" (click)="onAddCartEvent($event)">Tv</button>
- <button value="Washing Machine" (click)="onAddCartEvent($event)">Washing Machine</button>
- <h5>{{cartMessage}}</h5>
+-->
+<p><b>Example - $event.target example using (click) event</b></p>
+<button value="laptop" (click)="onAddCartEvent($event)">Laptop</button>
+<button value="TV" (click)="onAddCartEvent($event)">Tv</button>
+<button value="Washing Machine" (click)="onAddCartEvent($event)">Washing Machine</button>
+<h5>{{cartMessage}}</h5>
+
+<hr>
+
+
+<h1>Template Reference Variable</h1>
+<!-- 
+    accessing other elements using template reference variable example 
+-->
+<input #inputInfo type="text" value="Badal Patel" name="inputTemplateReferenceLearning">
+<button (click)="getInputInfo(inputInfo)">Get Information</button>
+<hr>
+<h1>Two Way Data Binding</h1>
+<!-- 
+    accessing other elements using template reference variable example
+    event binding and propety binding we have to use for two way data binding 
+    ngModel is prebuild directive to use two way data binding - make sure import formsmodule to use ngModel
+-->
+<p>Example Of Two Way Data Binding : <b>{{uname}}</b></p>
+<input type="text" value="Test 1" [(ngModel)]="uname">
+
+<hr>
+<!-- 
+-->
+<h1>ngClass and ngStyle Biding</h1>
+<!--If you make true it will show "myclass"in inspect else won't. also we can dynamically bind this class true or false -->
+<div class="box" [class.myclass]="myProperty" [style.backgroundColor]="myStyle1">
+    <p>Class Binding</p>
+</div>
+<!-- change style using turnery Operator-->
+<div class="box" [class.myclass]="myProperty" [style.backgroundColor]="isActive? myStyle1 : myStyle2">
+    <p>Class Binding --Using Turnery Operator</p>
+</div>
+<!-- Using [ngClass] directive - to assign multiple classes Inspect to see class-->
+<div class="box" [ngClass]="'class1 class2 class3'">
+    <p>[ngclass] directive</p>
+</div>
+<!-- Using [ngClass]  directive- to assign multiple classes Inspect to see class are added uinng object-->
+<div class="box" [ngClass]="mtlclasses">
+    <p>[ngclass] directive</p>
+</div>
+<!-- Using [ngStyle]  directive- to assign style-->
+<div class="box" [ngStyle]="{'background-color':'orange', 'border':'solid 1px blue'}">
+    <p>[ngStyle] directive</p>
+</div>
+<!-- Using [ngStyle]  directive- to assign style using object which is define in TS-->
+<div class="box" [ngStyle]="mltStyle">
+    <p>[ngStyle] directive</p>
+</div>
