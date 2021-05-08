@@ -11,3 +11,6 @@ h1{
     border: 1px solid blue;
     background-color: antiquewhite;
 }
+li{
+    display: inline;
+}

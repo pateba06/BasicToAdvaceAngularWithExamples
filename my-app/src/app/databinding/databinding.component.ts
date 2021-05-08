@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -28,4 +29,25 @@ turneryOnline(){
 status1="Online";
 status2="Offline";
 
+// on click event the message will show dynamically.
+message="Original cart";
+onAddCart(){
+this.message="I am being added to cart dynamically based on (click) event"
+}
+resetCart(){
+  this.message="Back To Original Cart on double click event"
+}
+//Understanding $event access to change the value
+onInputEventClick(event){
+    // inspect to see the behavior of event 
+    console.log(event.target.value)
+    //can change the value of event
+    event.target.value="badal"
+  }
+// Below function will get the event value from either tv/washing machine
+cartMessage="";
+  onAddCartEvent(event){
+    this.cartMessage =event.target.value + "Added in the cart"
+
+  }
 }
