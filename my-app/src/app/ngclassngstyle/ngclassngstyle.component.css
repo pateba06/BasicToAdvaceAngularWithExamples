@@ -16,3 +16,6 @@ h1{
     height: 100px;
     background-color: bisque;
 }
+.box{
+    display: inline-block;
+}
