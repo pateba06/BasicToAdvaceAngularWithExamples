@@ -48,6 +48,34 @@ onInputEventClick(event){
 cartMessage="";
   onAddCartEvent(event){
     this.cartMessage =event.target.value + "Added in the cart"
-
   }
+
+//accessing other elements using template reference variable example 
+getInputInfo(inputInfo){
+  //check in console --You can right replace inputInfo by any custom named var
+  console.log(inputInfo)
+  console.log(inputInfo.name)
+  console.log(inputInfo.value)
+}
+
+//example of two way data binding
+uname ="Badal Patel" ;
+
+ //adding class by binding true or false
+myProperty: boolean = true;
+//adding style property
+isActive: boolean = true;
+myStyle1 = "red";
+myStyle2 = "blue";
+//[ngClass] object Example
+mtlclasses = {
+  class1: true,
+  class2: true,
+  class3: true
+}
+////[ngStyle] object Example
+mltStyle = {
+  'background-color': 'black',
+  'border': 'solid 1px red'
+}
 }
