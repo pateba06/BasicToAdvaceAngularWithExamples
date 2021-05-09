@@ -1,0 +1,97 @@
+<h1> There are three types of directives</h1>
+<ol>
+  <li>Component Directives</li>
+  <p>Directives with own component</p>
+  <li>Structural Directives</li>
+  <p>Manipulating the Dom Elements</p>
+  <ul>
+    <li>ngIf</li>
+    <li>ngFor</li>
+    <li>ngSwitch</li>
+  </ul>
+  <li>Attribugte Directives</li>
+  <p>Changes the look and behavior of the dom</p>
+  <ul>
+    <li>ngStyle</li>
+    <li>ngClass</li>
+  </ul>
+</ol>
+
+<h1>Let see examples of Strucural Directives</h1>
+<ol>
+  <li>ngIf</li>
+  <div class="container">
+    <button class="btn btn-success" (click)="onCreateBlock()">Create Block</button>
+    <!-- We want to show below line only when we click on button.
+  we will use *ngIf directive and will show condition base on then or else condition
+  -->
+    <div *ngIf="isValid; then thenblock else elseblock"></div>
+    <ng-template #thenblock>
+      <div>Block has been created and block name is My Block</div>
+    </ng-template>
+    <ng-template #elseblock>
+      <div>No Block has been created</div>
+    </ng-template>
+  </div>'
+  <!-- 
+      ngSwitch Example
+    -->
+  <li>ngSwitch</li>
+  <div class="container">
+    <div class="col-md-4">
+      <!-- form-control is the bootstrap class. 
+      and Example of [ngSwitch] using *ngSwitchCase
+      -->
+      <select class="form-control" (change)="selectProduct($event)">
+        <option value="default">Select Product</option>
+        <option value="laptop">Laptop</option>
+        <option value="mobile">Mobile</option>
+        <option value="tv">TV</option>
+        <option value="washingmachine">Washing Machine</option>
+      </select>
+    </div>
+    <div class="col-md-8" [ngSwitch]="selectedProduct">
+      <h2 *ngSwitchDefault>Please Select Product</h2>
+      <h2 *ngSwitchCase="'mobile'">Mobile</h2>
+      <h2 *ngSwitchCase="'laptop'">Laptop</h2>
+      <h2 *ngSwitchCase="'tv'">TV</h2>
+      <h2 *ngSwitchCase="'washingmachine'">Washing Machine</h2>
+    </div>
+  </div>
+  <!-- 
+      ngFor Example
+    -->
+  <li>ngFor</li>
+  <h2>*ngFor - It is angular directive which work's like for loop</h2>
+  <!-- 
+      Let see an example
+    -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Sr No</th>
+              <th>Product Image</th>
+              <th>Product Name</th>
+              <th>Product Id</th>
+              <th>Product Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pro of product;index as i">
+              <td>{{i+1}}</td>
+              <td><img src="{{pro.proimg}}" style="width: 100px;height: 50px;"></td>
+              <td>{{pro.name}}</td>
+              <td>{{pro.id}}</td>
+              <td>{{pro.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</ol>
